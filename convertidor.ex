@@ -1,8 +1,12 @@
-defmodule ExploraLogs do
-  def dia(logName) do
-			{:ok, filetext} = File.read(logName)
-			freqIps = Regex.scan(~r/\d+?\.\d+?\.\d+?\.\d+?/, filetext) 
-								|> Enum.frequencies() 
+defmodule convertidor do
+  def obtenGanador(entrada) do
+			{:ok, filetext} = File.read(entrada)
+            lineas = String.split(filetext, ~r/\R/)
+            primeraLinea = hd(lineas)
+            rondas = Integer.parse(primeraLinea)
+            detalles = tl(lineas)
+            numeroDeDetalles = Enum.count(detalles)
+
 			{nVeces, ipLoc} = Map.new(freqIps, fn {key, val} -> {val, key} end) 
 								|> Enum.sort() 
 								|> List.last()
