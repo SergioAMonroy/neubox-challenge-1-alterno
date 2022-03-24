@@ -46,3 +46,9 @@ o Esta línea contiene dos enteros, el primer entero es 1 o 2 indicando quien fu
 el ganador, y el segundo entero es la ventaja con la que gana ese jugador
 
 1 58
+
+Para ejecutar el programa: 
+python3 main.pyw
+
+A veces es necesario instalar el componente tk de python:
+sudo apt-get install python3-tk
