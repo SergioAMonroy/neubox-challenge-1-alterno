@@ -21,7 +21,7 @@ class File:
 
             txt.close()
         except:
-            raise ValueError("No se pudo leer el archivo.")
+            raise Exception("No se pudo leer el archivo.")
 
         finally:
             if not (txt.closed):
@@ -29,8 +29,8 @@ class File:
 
         return listData
 
-    def crear_txt(self, resultado):
-        rutaTxt = os.path.abspath("salida.txt")
+    def crear_txt(self, resultado, rutaArchivoSalida):
+        rutaTxt = os.path.abspath(rutaArchivoSalida)
 
         archivo = open(rutaTxt, "w")
         archivo.write(resultado)
